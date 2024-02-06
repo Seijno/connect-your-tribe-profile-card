@@ -1,52 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* 8-9-2023 */
+html {
+  scroll-behavior: smooth; /* wordt gebruikt voor de downarrow link zodat de transitie smooth is*/
 }
-
-body {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  font-family: Helvetica, Arial, sans-serif;
-  background: silver;
+body{
+  background: ghostwhite; /*heb de achtergrond iets minder wit gemaakt*/
+  font-family: 'Roboto', sans-serif; /*lettertype*/
+  font-family: 'Roboto Mono', monospace;
+  overflow-x: hidden; /*zorgt dat je niet zijwaards kan scrollen*/
+  height: 100vh; /*hoogte, 100 hoogte van het scherm*/
+  margin: 0 ; /*haalt eventuele margins weg*/
 }
-
-header {
-  padding: 0.5rem;
+.container{
+height: 100vh;
+position: relative;
+}
+#teaser{
+  width: 100vw;
+  margin-top: 45vh;
+}
+a{
+  text-decoration: none; /*haalt de streepjes van de linken af*/
+}
+#main{
+  position: relative;
+  width: 60vw;
+  height: 100vh;
+  /* border: solid 2px red; */
+  float: left;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,2,2,1) 100%);/*gradient zorgt voor vloeiende achtergrond kleur*/
+}
+.promo{
+  position: relative;
+  width: 40vw;
+  height: 100vh;
+  /* border: solid 1px purple; */
+  margin-left: 60vw; /*geeft extra witruimte aan de linker kant*/
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,2,2,1) 100%);
+}
+.text{
+  text-align: center;
+}
+#reveal{
+  margin-top: 45vh;
+  width: 60vw;
+  color: rgb(15, 61, 9);
+  font-size: 200%;
+}
+#knopje{
+  width: 19%;
+  min-width: 200px;
+  height: 5%;
+  min-height: 40px;
+  /* border: solid 1px red; */
+  margin: 0 auto;
+  border-radius: 1em;
+  background: rgb(255, 216, 216);
+  color: red;
+  font-size: larger;
+  transition: 0.5s;
+}
+#knopje:hover{
   background: red;
   color: white;
-
-  h1 {
-    text-transform: uppercase;
-  }
+  transition: 1s;
 }
-
-article {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  width: 12rem;
-  aspect-ratio: 1/1;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  background: white;
-  text-align: center;
-  transform-origin: center;
-  transform: rotate(2deg);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  > p {
-    font-size: 2rem;
-    font-family: 'Permanent Marker', cursive;
-    transform-origin: center;
-    transform: rotate(-6deg);
-    word-break: break-all;
-  }
+.example{
+  min-width: 80px;
+  width: 20vw;
+  min-height: 50px;
+  height: 20vh;
+  border: solid 2px black;
+  margin: 0 auto;
+  margin-top: 15px;
+  transition: 250ms;
 }
-
-footer {
-  height: 1rem;
-  background: red;
+.example:hover{
+  box-shadow: 0 0 10px 5px grey;
+  transition: 0.5s;
+}
+.margin{
+  margin: 0;
+}
+#name{
+  color: rgb(0, 0, 189);
+}
+img{
+  min-width: 80px;
+  width: 20vw;
+  min-height: 50px;
+  height: 20vh;
+}
+#begin{
+  margin-bottom: 50vh;
 }

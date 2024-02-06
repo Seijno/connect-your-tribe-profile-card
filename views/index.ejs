@@ -1,14 +1,21 @@
 <%- include('./partials/head') %>
 
-<article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
-
-  <p><%= data.name %></p>
-
-  <footer></footer>
-</article>
+<section id="begin">
+  <h1 class="text" id="teaser">Waarom een site als dit<br><a href="#main">⬇️</a></h1>
+</section>
+<section class="container">
+  <div id="main">
+      <h1 class="text" id="reveal">Als het ook zo kan</h1>
+      <h2 class="text" id="name">Seijno van Nieuwkoop</h2>
+      <a class="text" href="#"><div id="knopje"><p class="margin">Meer over mij</p></div></a>
+  </div>
+  <div class="promo">
+      <h3 class="text">Mijn Werk</h3>
+      <a href="#"><div class="example"><img src="./img/front.png"></div></a>
+      <a href="#"><div class="example"><img src="./img/front.png"></div></a>
+      <a href="#"><div class="example"><img src="./img/front.png"></div></a>
+      <a><div class="example"><p class="text" style="margin-top: 15%;">Uw site</p></div></a>
+  </div>
+</section>
 
 <%- include('./partials/foot') %>
