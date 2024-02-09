@@ -1,18 +1,18 @@
 /* 8-9-2023 */
+:root{
+  --middleText: center;
+  --witText: white;
+  --blackText: black;
+}
 html {
   scroll-behavior: smooth; /* wordt gebruikt voor de downarrow link zodat de transitie smooth is*/
 }
 body{
-  background: ghostwhite; /*heb de achtergrond iets minder wit gemaakt*/
+  background: rgb(255, 255, 255); /*heb de achtergrond iets minder wit gemaakt*/
   font-family: 'Roboto', sans-serif; /*lettertype*/
   font-family: 'Roboto Mono', monospace;
   overflow-x: hidden; /*zorgt dat je niet zijwaards kan scrollen*/
-  height: 100vh; /*hoogte, 100 hoogte van het scherm*/
   margin: 0 ; /*haalt eventuele margins weg*/
-}
-.container{
-height: 100vh;
-position: relative;
 }
 #teaser{
   width: 100vw;
@@ -21,31 +21,34 @@ position: relative;
 a{
   text-decoration: none; /*haalt de streepjes van de linken af*/
 }
+.container{
+  background: rgb(5,174,255);
+  background: linear-gradient(0deg, rgba(5,174,255,1) 0%, rgba(255,255,255,1) 100%);
+}
 #main{
   position: relative;
-  width: 60vw;
   height: 100vh;
-  /* border: solid 2px red; */
-  float: left;
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,2,2,1) 100%);/*gradient zorgt voor vloeiende achtergrond kleur*/
+}
+h1{
+  margin: 0 auto;
+  text-align: var(--middleText);
+}
+h2{
+  text-align: var(--middleText);
 }
 .promo{
   position: relative;
-  width: 40vw;
   height: 100vh;
-  /* border: solid 1px purple; */
-  margin-left: 60vw; /*geeft extra witruimte aan de linker kant*/
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,2,2,1) 100%);
 }
 .text{
   text-align: center;
 }
+#info{
+  margin-top: 10rem;
+}
 #reveal{
-  margin-top: 45vh;
   width: 60vw;
-  color: rgb(15, 61, 9);
+  color: var(--blackText);
   font-size: 200%;
 }
 #knopje{
@@ -53,11 +56,10 @@ a{
   min-width: 200px;
   height: 5%;
   min-height: 40px;
-  /* border: solid 1px red; */
   margin: 0 auto;
   border-radius: 1em;
-  background: rgb(255, 216, 216);
-  color: red;
+  background: rgb(248, 134, 59);
+  color: rgb(255, 235, 235);
   font-size: larger;
   transition: 0.5s;
 }
@@ -67,31 +69,88 @@ a{
   transition: 1s;
 }
 .example{
-  min-width: 80px;
-  width: 20vw;
-  min-height: 50px;
+  min-width: 3rem;
+  width: 30rem;
+  min-height: 2rem;
   height: 20vh;
-  border: solid 2px black;
-  margin: 0 auto;
-  margin-top: 15px;
-  transition: 250ms;
-}
-.example:hover{
-  box-shadow: 0 0 10px 5px grey;
-  transition: 0.5s;
+  background: ghostwhite;
+  margin-left: 2rem;
 }
 .margin{
   margin: 0;
 }
 #name{
-  color: rgb(0, 0, 189);
+  color: var(--blackText);
 }
 img{
-  min-width: 80px;
-  width: 20vw;
-  min-height: 50px;
-  height: 20vh;
+  position: relative;
+  min-width: 3rem;
+  width: 30rem;
+  min-height: 2rem;
+  height: 15rem;
+  margin: 1rem 2rem 4rem 2rem;
 }
 #begin{
   margin-bottom: 50vh;
+}
+
+/* animatie */
+.cards {
+	list-style: none;
+	white-space: nowrap;
+	overflow: scroll;
+  scroll-snap-type: x mandatory;
+  overflow-y:hidden ;
+}
+.cards li {
+	display: inline-block;
+	aspect-ratio: 1;
+  scroll-snap-align: center;
+  view-timeline-name: --li-in-and-out-of-view;
+	view-timeline-axis: inline;
+  animation: linear;
+	animation-timeline: --li-in-and-out-of-view;
+  overflow: hidden;
+  background: rgb(0, 0, 0);
+  color: var(--witText);
+  width: 30rem;
+  height: 20rem;
+}
+li>p{
+  font-size: 1.5rem;
+  font-style: bold;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  word-wrap: normal;
+
+}
+
+.cards li > img {
+	animation: linear rotate-cover both;
+	animation-timeline: --li-in-and-out-of-view;
+}
+
+@media only screen and (min-width: 700px){
+  #main{
+    width: 60vw;
+    float: left;
+  }
+  .promo{
+    width: 40vw;
+    margin-left: 60vw;
+  }
+  img{
+    width: 30rem;
+    height: 15rem;
+  }
+  .example{
+    width: 30rem;
+    height: 15rem;
+  }
+  .head{
+    background: rgb(199, 151, 197);
+    width: 3rem;
+    height: 4rem;
+    position: absolute;
+  }
 }
